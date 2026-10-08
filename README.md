@@ -2,7 +2,7 @@
 
 A little less product. A lot more curiosity.
 
-**[Visit the website](https://crs48.github.io/freethepores/)**
+**[Visit the website](https://freethepores.com/)**
 
 An independent, playful exploration of simpler skin care by Christopher Smothers. Six research explainers investigate simpler bathing, skin-barrier care, and the microbiome through a searchable library of 24 studies, reviews, and guidance sources. Every source has an original link, a finding, limitations, and a reading-access note.
 
@@ -17,7 +17,7 @@ npm ci
 npm run dev
 ```
 
-Open the URL printed by Astro and append `/freethepores/`. The configured project base is intentional. Astro may choose a different port if its default is busy.
+Open the URL printed by Astro. Astro may choose a different port if its default is busy.
 
 ```sh
 npm run validate
@@ -57,13 +57,15 @@ Fonts are served locally. Search runs in the browser. Core content, source links
 
 ## Publish with GitHub Pages
 
-The production configuration is `site: https://crs48.github.io` with `base: /freethepores`. In the repository's **Settings → Pages**, select **GitHub Actions** as the build source. Push to `main` to validate and deploy. Pull requests validate without deployment.
+The production configuration is `site: https://freethepores.com` with `base: /`. In the repository's **Settings → Pages**, select **GitHub Actions** as the build source and set the custom domain to `freethepores.com`. Push to `main` to validate and deploy. Pull requests validate without deployment.
 
-For a fork, update the `site` and `base` in `astro.config.mjs`, the repository URL in `src/data/site.ts`, and the project base in `scripts/check-links.mjs`. All internal links and local assets must use the shared `href()` helper. A custom domain requires coordinated configuration changes; no domain is assumed or purchased.
+DNS is managed through Vercel DNS. The apex uses GitHub Pages' four A records (`185.199.108.153` through `185.199.111.153`) and four AAAA records (`2606:50c0:8000::153` through `2606:50c0:8003::153`). The `www` CNAME points to `crs48.github.io`; GitHub Pages redirects it to the apex domain. Enable **Enforce HTTPS** once GitHub provisions the certificate. For this Actions-based deployment, the custom domain is configured in Pages settings rather than a `CNAME` file in the build.
+
+For a fork, update the `site` and `base` in `astro.config.mjs` and the repository URL in `src/data/site.ts`. The link checker reads the configured base automatically. All internal links and local assets must use the shared `href()` helper.
 
 ## Research and corrections
 
-This is a curated narrative collection, not a systematic review or independently clinician-reviewed advice. The launch source check is dated October 8, 2026. Read the site's [editorial standards](https://crs48.github.io/freethepores/about/) and [CONTRIBUTING.md](CONTRIBUTING.md) before adding claims. Cite the original paper where possible, distinguish abstracts from full texts, include contradictory findings, and preserve uncertainties. Do not copy journal text or figures into the repository.
+This is a curated narrative collection, not a systematic review or independently clinician-reviewed advice. The launch source check is dated October 8, 2026. Read the site's [editorial standards](https://freethepores.com/about/) and [CONTRIBUTING.md](CONTRIBUTING.md) before adding claims. Cite the original paper where possible, distinguish abstracts from full texts, include contradictory findings, and preserve uncertainties. Do not copy journal text or figures into the repository.
 
 Open an issue or pull request for corrections, ideally identifying the exact statement and the better evidence. A source's inclusion does not imply endorsement or permission to redistribute it.
 
