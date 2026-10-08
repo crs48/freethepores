@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { href } from '../data/site';
+---
+<Layout title="It started with a bath" description="Christopher Smothers on stepping away from a crowded bathroom shelf—and the questions his simpler routine raised.">
+  <section class="page-top"><div class="wrap"><span class="eyebrow">A personal story by Christopher Smothers</span><h1>It started<br />with a bath.</h1><p class="lead">Fewer bottles. Less fuss. A body that felt more like mine.</p></div></section>
+  <div class="wrap section reading-layout">
+    <aside class="reading-sidebar"><span class="eyebrow">N = me</span><p>One person’s experience.<br />Not a clinical trial.</p><a href={href('research/')}>Explore the research</a></aside>
+    <article class="prose">
+      <p>I stopped using body wash, shampoo, washcloths, loofahs, lotion, cologne, and deodorant. Pretty much the whole lineup. Instead, I started taking a bath every day.</p>
+      <p>I use my hands to gently massage my skin. Sometimes I put a little sage oil and magnesium salt in the water. Once or twice a week, I condition my curly hair and take that time to comb it and work through the tangles.</p>
+      <p>That’s the routine. And I’m happier with how my skin feels.</p>
+      <h2>Comfort was the point.</h2>
+      <p>My body feels like it has the oils it needs. I don’t feel dry. I don’t feel coated in products. I’m mostly vegan, I stay hydrated, and I don’t drink much alcohol. I’m comfortable with how I smell without deodorant or cologne.</p>
+      <p>I suspect that what I eat and how I live play a part. But I changed several things, and I don’t have a controlled experiment that tells me which one made the difference. My experience is real; my explanation is still a question.</p>
+      <h2>So I started asking.</h2>
+      <p>Do we need everything we put on our bodies? When does a product help, and when are we just responding to a very good advertisement? Can we become more comfortable with our own scent? What does caring for skin look like when it stops being a shopping list?</p>
+      <p>Free the Pores is the place I wanted for those questions. The name is a joke. The curiosity isn’t.</p>
+      <div class="callout"><span class="eyebrow">Where my routine meets the research</span><p>This is a description of what I’ve done, not a bath recipe. Essential oils can irritate skin, and water or salt does not safely disperse them. The evidence also does not establish salt baths as a way to correct magnesium deficiency.</p><p><a href={href('research/natural/')}>Read the notes on oils, salts, and “natural.”</a></p></div>
+      <h2>No new rulebook.</h2>
+      <p>I don’t want “buy all the things” to become “you must use nothing.” If conditioner helps my curls, it stays. If your skin needs a moisturizer, sunscreen, or a treatment, there is room for that too.</p>
+      <p>The invitation is to pay attention. To get curious about what you actually need. And maybe to make a little room on the shelf.</p>
+      <p class="font-display text-2xl">— Christopher</p>
+      <p class="fine muted">Adapted from Christopher’s account of his routine. The surrounding research notes distinguish that personal account from medical evidence.</p>
+      <a class="button button-dark" href={href('less/')}>Explore doing a little less</a>
+    </article>
+  </div>
+</Layout>

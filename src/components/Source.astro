@@ -1,0 +1,13 @@
+---
+import type { Source } from '../data/sources';
+interface Props { source: Source; }
+const { source } = Astro.props;
+---
+<article class="source-item" id={source.id} data-source data-kind={source.kind} data-search={`${source.title} ${source.citation} ${source.topic} ${source.finding}`.toLowerCase()}>
+  <div class="source-meta"><span class="pill">{source.kind}</span><span>{source.year}</span><span>·</span><span>{source.topic}</span></div>
+  <h3><a href={source.url}>{source.title}</a></h3>
+  <p class="source-citation muted">{source.citation}</p>
+  <p>{source.finding}</p>
+  <details><summary>Limits & reading notes</summary><p>{source.limits}</p><p class="fine muted">{source.access}. Source checked October 8, 2026.</p></details>
+  <div class="source-links"><a href={source.url}>Read the original source</a>{source.doi && <a href={`https://doi.org/${source.doi}`}>DOI</a>}</div>
+</article>

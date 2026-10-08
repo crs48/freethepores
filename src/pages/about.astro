@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { href, repository } from '../data/site';
+---
+<Layout title="Our ground rules" description="How Free the Pores selects sources, handles uncertainty, and separates personal experience from research.">
+  <section class="page-top"><div class="wrap"><span class="eyebrow">The fine print, in normal-sized type</span><h1>Question the bottle.<br />Question us, too.</h1><p class="lead">An independent, open-source exploration of simpler body care. Built around curiosity, with the evidence left in view.</p></div></section>
+  <div class="wrap section reading-layout">
+    <aside class="reading-sidebar"><span class="eyebrow">Our ground rules</span><a href="#method">Research method</a><a href="#corrections">Corrections</a><a href="#open-source">Open source & privacy</a></aside>
+    <article class="prose">
+      <h2>What we’re here for.</h2><p>Free the Pores began with Christopher Smothers feeling better after simplifying his body-care routine. We want to investigate product claims, unnecessary complexity, and the pressure to treat ordinary skin like a problem to solve.</p>
+      <p>We are interested in the risks and benefits of particular ingredients and treatments. Broad categories like “chemicals,” “natural,” or “pharmaceuticals” cannot answer whether something is useful or harmful. Evidence about one product does not indict or vindicate an entire industry.</p>
+      <h2 id="method">How we read the research.</h2>
+      <p>The launch library was assembled on October 8, 2026 through targeted searches of PubMed and journal literature, plus public guidance from AAD, CDC, FDA, NCCIH, DermNet, and a specialist essential-oil safety source. Topics followed the questions raised by Christopher’s routine.</p>
+      <p>This is a curated narrative collection, not an exhaustive systematic review. Older papers provide useful context; their inclusion does not mean the field stopped there. The review date records when sources were checked, not a claim that every relevant study published by that date is included.</p>
+      <ul>
+        <li><strong>Prefer the source.</strong> Link to original studies or reviews and identify when only an abstract was reviewed. Guidance is labeled separately from experiments.</li>
+        <li><strong>State the population and outcome.</strong> Findings about eczema, forearms, or odor ratings should not silently become claims about everybody’s health.</li>
+        <li><strong>Show the limits.</strong> Small samples, short follow-up, lack of controls, and uncertain clinical importance belong beside the finding.</li>
+        <li><strong>Include inconvenient evidence.</strong> Studies supporting sunscreen or moisturizer belong here just as much as studies questioning harsh cleansing.</li>
+        <li><strong>Separate observation and interpretation.</strong> Personal comfort is meaningful. It does not establish a cause, a cure, or a recommendation for someone else.</li>
+      </ul>
+      <div class="callout"><span class="eyebrow">What the labels mean</span><p><strong>Study:</strong> an original investigation. <strong>Review:</strong> a synthesis of existing research. <strong>Guidance:</strong> clinical, public-health, or safety advice. These describe the source, not a quality ranking.</p><p>Topic verdicts are editorial summaries, not formal GRADE assessments. This site has not undergone independent clinical review.</p></div>
+      <h2>Good questions to ask a product claim.</h2>
+      <p>Was the finished product tested, or just an ingredient in a dish? Against what comparison? Did people feel better, or did only a laboratory measurement move? Who funded the work? What were the side effects, and how long did follow-up last?</p>
+      <p>Commercial funding does not automatically invalidate a study. It is a reason to inspect the design and look for independent confirmation. We have not completed a funding and conflict-of-interest audit for every source in this first collection.</p>
+      <h2 id="corrections">Help make the footnotes better.</h2>
+      <p>Found a mistake, a stronger study, or a conclusion that runs ahead of its evidence? <a href={`${repository}/issues/new`}>Open a research correction on GitHub</a> with the page, the claim, and a source. Thoughtful disagreement is welcome.</p>
+      <p>Research changes are versioned in the public repository. Corrections should explain what changed and why. We would rather improve a sentence than defend it.</p>
+      <h2 id="open-source">Open source. No shopping cart.</h2>
+      <p>Original project code and writing are available under the <a href={`${repository}/blob/main/LICENSE`}>MIT license, © 2026 Christopher Smothers</a>. Linked papers and third-party fonts retain their own licenses. The bath illustration was generated for this project with OpenAI image generation; it depicts a fictional character.</p>
+      <p>This is a static Astro and Tailwind site hosted on GitHub Pages. It has no ads, affiliate links, accounts, analytics scripts, or data-entry forms. Library searches run in your browser and are not sent to a search service. GitHub may process standard hosting request data under its <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">privacy statement</a>.</p>
+      <p class="fine">Educational content cannot diagnose symptoms or replace care from a qualified professional. Nothing here is a reason to discontinue prescribed medication.</p>
+      <a class="button button-dark" href={href('research/#library')}>Inspect the source library</a>
+    </article>
+  </div>
+</Layout>

@@ -1,0 +1,23 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { topics } from '../../data/topics';
+import { getSource } from '../../data/sources';
+import { href, reviewed } from '../../data/site';
+export const getStaticPaths = () => topics.map(topic => ({ params: { slug: topic.slug }, props: { topic } }));
+const { topic } = Astro.props;
+const cited = [...new Set(topic.sections.flatMap(section => section.sources))].map(getSource);
+---
+<Layout title={topic.title} description={topic.description}>
+  <section class="page-top"><div class="wrap"><a class="eyebrow underline" href={href('research/')}>The big questions / {topic.label}</a><h1>{topic.title}</h1><p class="lead">{topic.description}</p><span class="pill mt-6">{topic.verdict}</span></div></section>
+  <div class="wrap section reading-layout">
+    <aside class="reading-sidebar"><span class="eyebrow">Research notes</span><p>Sources checked<br />{reviewed}</p><p>By Free the Pores<br />An independent editorial project</p><a href="#sources">{cited.length} cited sources</a><a href={href('about/#method')}>How we read the evidence</a></aside>
+    <article class="prose">
+      {topic.sections.map(section => <section class="article-section"><h2>{section.title}</h2>{section.paragraphs.map(paragraph => <p>{paragraph}</p>)}{section.sources.length > 0 && <div class="citation-links">{section.sources.map(id => { const source = getSource(id); return <a href={href(`research/#${id}`)}>{source.citation.split(' · ')[0]} · {source.year}</a>; })}</div>}</section>)}
+      <div class="callout yellow"><span class="eyebrow">Our reading of the evidence</span><p>{topic.takeaway}</p></div>
+      <div class="article-limit"><h3>What we still don’t know</h3><p class="mt-4">{topic.unknown}</p></div>
+      <section id="sources"><h2>Follow the footnotes.</h2><ol>{cited.map(source => <li><a href={source.url}>{source.title}</a><span class="block fine muted">{source.citation} · {source.year}. {source.access}.</span></li>)}</ol></section>
+      <p class="fine muted">These notes explain published evidence; they are not a personalized treatment plan. For ongoing symptoms or changes to prescribed care, talk with a qualified clinician.</p>
+      <a class="button" href={href('research/')}>Explore another question</a>
+    </article>
+  </div>
+</Layout>

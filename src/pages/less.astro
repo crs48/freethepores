@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { href } from '../data/site';
+const steps = [
+  { title: 'Ask what each product is doing.', text: 'Is it cleaning something off, easing discomfort, protecting you, treating a condition, or simply something you enjoy? All are useful things to know. “I saw it in a routine” is worth a second look.' },
+  { title: 'Choose one optional extra.', text: 'A fragrance, an extra cosmetic layer, or a scrub you don’t enjoy may be a place to start. Leave prescribed treatments and sun protection in place. Changing one thing makes your own experience easier to interpret.' },
+  { title: 'Pay attention, without a deadline.', text: 'Notice comfort, dryness, itch, scalp condition, and whether the simpler routine fits your day. A brief note can help you remember. There is no proven universal “detox period” you need to push through.' },
+  { title: 'Keep, adjust, or bring it back.', text: 'If something helped, it can stay. If reducing products does not work for you, that is useful information. Persistent irritation, cracking, a rash, or other symptoms are reasons to seek care—not proof that the experiment is working.' },
+];
+---
+<Layout title="Try a little less" description="A gentle way to reconsider optional skin-care products while keeping effective hygiene, sun protection, and care that helps.">
+  <section class="page-top"><div class="wrap"><span class="eyebrow">A smaller routine, on your terms</span><h1>Try less.<br />Notice more.</h1><p class="lead">You don’t need a challenge, a shopping list, or someone else’s exact bath routine. Start with what feels unnecessary.</p></div></section>
+  <div class="wrap section reading-layout">
+    <aside class="reading-sidebar"><span class="eyebrow">An invitation</span><p>This is a way to think about optional products, not a medical protocol.</p><a href={href('research/useful-products/')}>Products with a purpose</a></aside>
+    <div>
+      <ol class="steps">{steps.map(step => <li><div><h3>{step.title}</h3><p>{step.text}</p></div></li>)}</ol>
+      <div class="callout yellow mt-8"><span class="eyebrow">Keep the useful basics</span><p>Keep washing your hands with soap, keep sun protection, and follow your treatment plan. Simplicity should support your health and comfort.</p><p class="fine"><a class="underline" href={href('research/#handwashing')}>Hand hygiene guidance</a> · <a class="underline" href={href('research/#sun-guidance')}>Sun protection guidance</a></p></div>
+      <section class="mt-14"><span class="eyebrow mb-4">The practical questions</span><h2>Before you clear the shelf.</h2>
+        <div class="faq">
+          <details><summary>Do I have to stop using soap?</summary><p>No. This project does not establish water-only washing as best for everyone. A gentle cleanser may be useful, and soap remains important for hand hygiene. <a class="underline" href={href('research/cleansing/')}>Read the cleansing notes.</a></p></details>
+          <details><summary>Should I add sage oil or magnesium salts?</summary><p>Neither is necessary to explore a simpler routine. Essential oils can cause reactions and do not dissolve in bathwater; salt does not fix that. Magnesium absorption claims are not well supported. <a class="underline" href={href('research/natural/')}>Read the ingredient evidence.</a></p></details>
+          <details><summary>What if my skin is dry or I have eczema?</summary><p>A moisturizer may be a useful part of your care. A smaller routine can include treatment. Don’t use this site to stop or taper prescribed medication. <a class="underline" href={href('research/useful-products/')}>Read about products that help.</a></p></details>
+          <details><summary>Do I have to change my diet to stop deodorant?</summary><p>No. The small diet-and-odor study does not establish a required diet, or prove that vegan people are odorless. Your comfort and preferences matter; no purity test is involved. <a class="underline" href={href('research/scent/')}>See what the study actually tested.</a></p></details>
+          <details><summary>Can I keep my conditioner?</summary><p>Of course. Conditioner serves a purpose for many curls, including Christopher’s. Scalp cleansing still matters. <a class="underline" href={href('research/hair/')}>Explore the hair-care notes.</a></p></details>
+        </div>
+      </section>
+    </div>
+  </div>
+</Layout>
