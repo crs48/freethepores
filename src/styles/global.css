@@ -13,7 +13,7 @@
 :root { font-family: var(--font-sans); color: var(--color-ink); background: var(--color-paper); font-synthesis: none; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 2rem; }
-body { margin: 0; font-size: 1rem; line-height: 1.6; }
+body { margin: 0; font-size: 1rem; line-height: 1.6; overflow-wrap: break-word; }
 ::selection { background: var(--color-lilac); color: var(--color-ink); }
 a, button, input, select, summary { -webkit-tap-highlight-color: transparent; }
 a { text-underline-offset: .25em; }
@@ -42,11 +42,11 @@ img { max-width: 100%; display: block; }
 .skip-link { position: absolute; z-index: 10; left: 16px; top: -90px; background: var(--color-yellow); padding: 12px; }
 .skip-link:focus { top: 16px; }
 .site-header { border-bottom: 1px solid var(--color-ink); background: var(--color-paper); }
-.header-inner { min-height: 100px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+.header-inner { min-height: 100px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 28px; padding-block: 12px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 1.75rem; letter-spacing: -.07em; text-decoration: none; white-space: nowrap; }
 .brand-period { color: var(--color-red); }
 .brand-mark { width: 35px; height: 35px; display: grid; place-items: center; background: #e94b35; border-radius: 50%; color: var(--color-paper); font-size: 2rem; line-height: 1; padding-bottom: 7px; }
-nav { display: flex; gap: 32px; align-items: center; font-size: .875rem; font-weight: 500; }
+nav { display: flex; flex-wrap: wrap; gap: 32px; align-items: center; font-size: .875rem; font-weight: 500; }
 nav a { text-decoration: none; padding: 12px 0; }
 nav a:hover, nav a[aria-current] { text-decoration: underline; }
 .nav-library { border: 1px solid var(--color-ink); padding: 10px 17px; border-radius: 4px; }
@@ -59,8 +59,8 @@ nav a:hover, nav a[aria-current] { text-decoration: underline; }
 .hero-lead { font-size: 1.13rem; max-width: 435px; line-height: 1.6; margin-block: 26px; }
 .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 22px; }
 .hero-art { position: relative; padding-top: 38px; }
-.hero-art img { width: 100%; mix-blend-mode: multiply; }
-.hero-sticker { position: absolute; top: -10px; right: 8px; transform: rotate(10deg); background: var(--color-paper); border: 1px solid var(--color-ink); border-radius: 50%; width: 115px; height: 115px; display: grid; place-content: center; text-align: center; line-height: 1.1; font-size: .83rem; font-weight: 700; }
+.hero-art img { width: 100%; border: 1px solid var(--color-ink); border-radius: 4px; }
+.hero-sticker { position: absolute; z-index: 1; top: -10px; right: 8px; transform: rotate(10deg); background: var(--color-paper); border: 1px solid var(--color-ink); border-radius: 50%; width: 115px; height: 115px; display: grid; place-content: center; text-align: center; line-height: 1.1; font-size: .83rem; font-weight: 700; }
 .hero-sticker strong { display: block; font-family: Georgia, serif; font-size: 2rem; font-weight: 400; }
 .hero-caption { text-align: center; font-size: .75rem; margin-top: 12px; }
 .ticker { background: var(--color-lilac); border-bottom: 1px solid var(--color-ink); padding-block: 15px; }
@@ -78,7 +78,7 @@ nav a:hover, nav a[aria-current] { text-decoration: underline; }
 .question-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
 .question-number { font-family: var(--font-display); font-size: .875rem; }
 .question-card h3 { font-size: 1.75rem; margin-bottom: 16px; max-width: 290px; }
-.question-card p { font-size: .94rem; line-height: 1.65; margin-bottom: 25px; }
+.question-card p { font-size: 1rem; line-height: 1.65; margin-bottom: 25px; }
 .question-bottom { margin-top: auto; font-size: .8rem; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
 .story-band { background: var(--color-lilac); border-block: 1px solid var(--color-ink); }
 .story-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 90px; align-items: center; }
@@ -168,7 +168,7 @@ nav a:hover, nav a[aria-current] { text-decoration: underline; }
   .header-inner { min-height: 104px; flex-direction: column; justify-content: center; gap: 7px; padding-block: 14px; }
   .brand { font-size: 1.55rem; }
   .brand-mark { width: 28px; height: 28px; font-size: 1.65rem; }
-  nav { width: 100%; justify-content: center; gap: 26px; font-size: .82rem; }
+  nav { width: 100%; justify-content: center; gap: 26px; font-size: .875rem; }
   nav a { padding: 8px 0; }
   .hero-grid { grid-template-columns: 1fr; padding-block: 40px 28px; gap: 32px; }
   .hero h1 { font-size: clamp(3.7rem, 14vw, 5.7rem); }
