@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { href } from '../data/site';
+const questions = [
+  { slug: 'cleansing', label: 'Skin & cleansing', title: 'Does clean have to mean squeaky?', text: 'Soap, skin oils, and the surprisingly complicated business of getting clean.' },
+  { slug: 'scent', label: 'Scent & diet', title: 'Can you eat your way to a better smell?', text: 'A small study, a big internet claim, and what your armpits actually tell us.' },
+  { slug: 'microbiome', label: 'Your microbiome', title: 'Who else is living on your skin?', text: 'Meet the microbes. Then question what “microbiome-friendly” really means.' },
+  { slug: 'natural', label: 'Natural & synthetic', title: 'Is natural always the gentler option?', text: 'Sage oil, bath salts, fragrance, and the trouble with a very persuasive label.' },
+  { slug: 'useful-products', label: 'Products with a purpose', title: 'Which products earn their place?', text: 'Sun protection, moisturizers, and treatments deserve a fair hearing.' },
+  { slug: 'hair', label: 'Hair & hydration', title: 'A simpler routine. Even for curls?', text: 'Less scrubbing, thoughtful conditioning, and no one-size-fits-all schedule.' },
+];
+---
+<Layout title="Less product. More you.">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">An independent inquiry into doing less</span>
+        <h1>Less product.<br />More <em>you.</em></h1>
+        <p class="hero-lead">Your skin doesn’t need a 12-step identity crisis. Let’s question the bottles, follow the evidence, and make a little room for being human.</p>
+        <div class="hero-actions"><a class="button button-dark" href={href('research/')}>Question the routine</a><a class="text-link fine" href={href('story/')}>How this all started</a></div>
+      </div>
+      <figure class="hero-art">
+        <div class="hero-sticker" aria-hidden="true">100%<strong>human.</strong>pores included.</div>
+        <img src={href('images/bath.webp')} width="1100" height="825" alt="A happy peach-colored character relaxing in a lilac bathtub and giving a peace sign." fetchpriority="high" />
+        <figcaption class="hero-caption">Artist’s impression of having fewer things to think about.</figcaption>
+      </figure>
+    </div>
+  </section>
+  <div class="ticker"><div class="wrap ticker-inner"><span>Pro-curiosity</span><span class="ticker-star" aria-hidden="true">✳</span><span>Less marketing. More evidence.</span><span class="ticker-star" aria-hidden="true">✳</span><span>Comfortable in your own skin</span><span class="ticker-star" aria-hidden="true">✳</span></div></div>
+  <section class="section"><div class="wrap intro-grid">
+    <div><span class="eyebrow mb-5">The very serious question behind the joke</span><h2>What if we don’t<br />need all this stuff?</h2></div>
+    <div class="intro-copy"><p>The body wash. The scrub. The serum for the serum. Somewhere along the way, caring for ourselves started looking a lot like stocking a small pharmacy.</p><p>Free the Pores is a place to ask what actually helps, what’s optional, and what we still don’t know. A little skepticism. A lot of footnotes. Absolutely no checkout cart.</p><a class="text-link fine inline-block mt-5" href={href('about/')}>Read our ground rules</a></div>
+  </div></section>
+  <section class="section questions"><div class="wrap">
+    <div class="section-heading"><div><span class="eyebrow">Start with a question</span><h2>Let’s get under the surface.</h2></div><a class="text-link fine shrink-0" href={href('research/#library')}>Browse the source library</a></div>
+    <div class="question-grid">{questions.map((question, i) => <a class="question-card" href={href(`research/${question.slug}/`)}><div class="question-top"><span class="question-number">0{i + 1}</span><span class="pill">{question.label}</span></div><h3>{question.title}</h3><p>{question.text}</p><span class="question-bottom">Explore the evidence</span></a>)}</div>
+  </div></section>
+  <section class="section story-band"><div class="wrap story-grid">
+    <div><span class="eyebrow">One person. Fewer bottles.</span><blockquote class="big-quote">“My body feels like it’s got the oils that it needs.”</blockquote><p class="fine">Christopher Smothers · Founder, professional owner of skin</p></div>
+    <div><h3>It started with a bath.</h3><p>I stopped using most body products. I started taking a bath every day. I kept a little conditioner for my curls. And I felt better in my skin.</p><p>That’s my experience. This site is where the questions it raised meet the research.</p><a class="button" href={href('story/')}>Read my story</a></div>
+  </div></section>
+  <section class="section"><div class="wrap">
+    <div class="section-heading"><div><span class="eyebrow">A few things we’re clear about</span><h2>Small routine. Open mind.</h2></div></div>
+    <div class="mini-grid"><article><span class="eyebrow">01 / Keep what helps</span><h3>Products can earn a place.</h3><p>Sunscreen, a moisturizer for dry skin, or a prescribed treatment can serve a real purpose. The evidence belongs in the conversation.</p><a class="text-link fine inline-block mt-4" href={href('research/useful-products/')}>See what holds up</a></article><article><span class="eyebrow">02 / Skip the purity contest</span><h3>Natural is not a safety test.</h3><p>Water is a chemical. So is sage oil. A useful question is how a particular ingredient behaves at a particular dose, on your skin.</p><a class="text-link fine inline-block mt-4" href={href('research/natural/')}>Unpack the label</a></article><article><span class="eyebrow">03 / Stay curious</span><h3>A story is a starting point.</h3><p>Feeling better matters. It doesn’t prove why it happened, or promise that someone else will get the same result.</p><a class="text-link fine inline-block mt-4" href={href('about/')}>How we read research</a></article></div>
+  </div></section>
+  <section class="section bottom-cta"><div class="wrap"><span class="eyebrow">No starter kit required</span><h2>Make some room<br />on the bathroom shelf.</h2><p>Start with one optional product, one honest question, and a little attention to how your skin feels.</p><a class="button button-dark" href={href('less/')}>Explore a simpler routine</a></div></section>
+</Layout>

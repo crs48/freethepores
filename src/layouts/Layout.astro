@@ -1,0 +1,54 @@
+---
+import '@fontsource/dm-sans/400.css';
+import '@fontsource/dm-sans/500.css';
+import '@fontsource/dm-sans/700.css';
+import '@fontsource/space-grotesk/500.css';
+import '@fontsource/space-grotesk/700.css';
+import '../styles/global.css';
+import { href, repository } from '../data/site';
+interface Props { title: string; description?: string; }
+const { title, description = 'A little less product. A lot more curiosity. An independent, evidence-aware exploration of skin, scent, and simpler routines by Christopher Smothers.' } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const navigation = [
+  ['The big questions', 'research/'], ['Try less', 'less/'], ['My story', 'story/'],
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5ed96" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href={href('favicon.svg')} />
+    <meta property="og:title" content={`${title} · Free the Pores`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <title>{title} · Free the Pores</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href={href()} aria-label="Free the Pores home"><span class="brand-mark" aria-hidden="true">∴</span><span>free the pores<span class="brand-period">.</span></span></a>
+        <nav aria-label="Main navigation">
+          {navigation.map(([label, path]) => <a href={href(path)} aria-current={Astro.url.pathname.startsWith(href(path)) ? 'page' : undefined}>{label}</a>)}
+          <a class="nav-library" href={href('research/#library')}>The evidence <span aria-hidden="true">[+]</span></a>
+        </nav>
+      </div>
+    </header>
+    <main id="main"><slot /></main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-top"><a class="brand" href={href()}>free the pores.</a><p>Less shelf. More self.</p></div>
+        <div class="footer-bottom">
+          <div><p>An independent project by Christopher Smothers.</p><p class="fine">Personal experiences + research. Educational, not individual medical advice.</p></div>
+          <div class="footer-links"><a href={href('about/')}>Our standards</a><a href={repository}>Open source</a><a href={`${repository}/blob/main/LICENSE`}>MIT license</a></div>
+        </div>
+        <p class="fine footer-note">© 2026 Christopher Smothers. No ads. No affiliate links. No miracle serum at the end.</p>
+      </div>
+    </footer>
+  </body>
+</html>

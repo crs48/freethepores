@@ -1,0 +1,25 @@
+{
+  "name": "free-the-pores",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "author": "Christopher Smothers",
+  "engines": { "node": ">=22.12.0" },
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "build": "astro build",
+    "preview": "astro preview --host 127.0.0.1",
+    "check": "astro check",
+    "test": "node --test scripts/*.test.mjs",
+    "validate": "npm run check && npm test && npm run build && node scripts/check-links.mjs"
+  },
+  "dependencies": {
+    "@fontsource/dm-sans": "^5.2.8",
+    "@fontsource/space-grotesk": "^5.2.10",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.3.8",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": { "@astrojs/check": "^0.9.10", "typescript": "^5.9.3" }
+}
