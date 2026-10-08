@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { href } from '../data/site';
+---
+<Layout title="Your skin is a habitat" description="Could most people simplify bathing and skin care? The research question behind Free the Pores: useful hygiene, less unnecessary scrubbing, and care for the skin barrier and microbiome.">
+  <section class="page-top"><div class="wrap"><span class="eyebrow">The idea behind Free the Pores</span><h1>Your skin<br />is a habitat.</h1><p class="lead">What if caring for it took fewer products, less scrubbing, and a better understanding of what’s already there?</p></div></section>
+  <div class="wrap section reading-layout">
+    <aside class="reading-sidebar"><span class="eyebrow">Our central question</span><p>Could most people dramatically simplify their skin-care and bathing routines?</p><a href={href('research/cleansing/')}>Bathing & cleansing</a><a href={href('research/microbiome/')}>The skin’s ecosystem</a></aside>
+    <article class="prose">
+      <p>A bath or shower, an all-over application of cleanser, and a vigorous scrub often come packaged as a single idea: getting clean. We want to take that routine apart and ask what each step contributes.</p>
+      <h2>Useful hygiene. Less automatic everything.</h2>
+      <p>Handwashing after the bathroom and before handling food has a clear purpose. It does not settle how much cleanser belongs on every other part of the body, every day. <a href={href('research/#handwashing')}>The hand-hygiene evidence</a> deserves its own place.</p>
+      <p>Could targeted washing replace some whole-body lathering? Could we leave out an exfoliating step? Could a smaller set of products meet the same needs? Those are concrete questions we can investigate.</p>
+      <h2>Care for the barrier and the life on it.</h2>
+      <p>Skin has an organized lipid barrier and resident microbial communities. Understanding both gives us a better starting point than treating every trace of oil or every microbe as something to remove. <a href={href('research/#barrier-lipids')}>Barrier research</a> and <a href={href('research/#skin-microbiome')}>microbiome research</a> describe different parts of that picture.</p>
+      <p>“Cultivating a good biome” is the aspiration. To make it useful, we need to define what better means: less irritation, an intact barrier, fewer symptoms, and effective hygiene. A higher bacteria count or a more diverse sample is not automatically a win.</p>
+      <div class="callout yellow"><span class="eyebrow">The working hypothesis</span><p>Many routines may contain steps that can be reduced without losing their benefits. We want to find where that is true, who benefits, and where a product or treatment still earns its place.</p></div>
+      <h2>Evolution can inspire a question.</h2>
+      <p>It cannot, by itself, tell us whether a daily shower is harmful or what schedule is best now. Establishing how often people bathed across cultures would require its own historical evidence; this project does not claim that all people evolved around one bathing frequency.</p>
+      <p>The stronger case for simplicity comes from testing modern routines against outcomes that matter. <a href={href('research/cleansing/')}>The cleansing notes</a> separate what is supported from what still needs a trial.</p>
+      <h2>Room to use less. Room to find out.</h2>
+      <p>This is a research project with a rallying cry: let’s question the automatic extras. No purity contest, no universal no-soap rule, and no replacement kit to buy.</p>
+      <p>Keep useful hygiene and care. Bring curiosity to the rest.</p>
+      <a class="button button-dark" href={href('less/')}>Explore a simpler approach</a>
+    </article>
+  </div>
+</Layout>

@@ -14,6 +14,48 @@ export type Source = {
 
 export const sources: Source[] = [
   {
+    id: 'barrier-lipids', title: 'The skin barrier: An extraordinary interface with an exceptional lipid organization',
+    citation: 'Bouwstra et al. · Progress in Lipid Research', year: '2023', kind: 'Review', topic: 'Cleansing',
+    url: 'https://pubmed.ncbi.nlm.nih.gov/37666282/', doi: '10.1016/j.plipres.2023.101252',
+    finding: 'The outer skin barrier depends on organized lipids between cells, including ceramides, cholesterol, and free fatty acids. Their arrangement matters for permeability and water loss.',
+    limits: 'A mechanistic review, not a bathing-frequency trial. Barrier lipids are not simply a layer of surface oil; leaving more sebum on skin is not a demonstrated way to improve every barrier.', access: 'Abstract and author-hosted publication summary reviewed',
+  },
+  {
+    id: 'exfoliation', title: 'How to safely exfoliate at home',
+    citation: 'American Academy of Dermatology', year: '2026', kind: 'Guidance', topic: 'Cleansing',
+    url: 'https://www.aad.org/public/everyday-care/skin-care-secrets/routine/safely-exfoliate-at-home',
+    finding: 'Exfoliation is optional and can irritate or damage skin when too aggressive. Skin type, method, and frequency affect tolerability.',
+    limits: 'This guidance does not say every washcloth or sponge is harmful. It distinguishes gentle use from over-exfoliation and does not establish a required daily scrub.', access: 'Full guidance reviewed',
+  },
+  {
+    id: 'bathing-frequency', title: 'Does daily bathing or showering worsen atopic dermatitis severity? A systematic review and meta-analysis',
+    citation: 'Hua et al. · Archives of Dermatological Research', year: '2021', kind: 'Review', topic: 'Cleansing',
+    url: 'https://pubmed.ncbi.nlm.nih.gov/33196889/', doi: '10.1007/s00403-020-02164-0',
+    finding: 'Across 13 prospective studies in atopic dermatitis, daily bathing was not associated with worse disease severity. The optimal frequency remained unclear.',
+    limits: 'These are eczema studies with substantial heterogeneity, not proof that healthy adults need daily showers or that daily full-body soap and scrubbing are harmless. Bathing and aggressive cleansing are separate exposures.', access: 'Abstract reviewed',
+  },
+  {
+    id: 'washing-frequency', title: 'Effects of skin washing frequency on the epidermal barrier function and inflammatory processes of the epidermis: An experimental study',
+    citation: 'Symanzik et al. · Contact Dermatitis', year: '2022', kind: 'Study', topic: 'Cleansing',
+    url: 'https://pubmed.ncbi.nlm.nih.gov/35357722/', doi: '10.1111/cod.14119',
+    finding: 'Forearms washed five or eleven times over four hours with the tested mild cleansing regimens showed comparable, mild barrier and inflammatory effects.',
+    limits: 'A short experimental exposure, not daily whole-body bathing over months. The authors called for longer studies. The result argues against assuming every repeated wash causes substantial damage.', access: 'Abstract reviewed',
+  },
+  {
+    id: 'microbiome-stability', title: 'Temporal Stability of the Human Skin Microbiome',
+    citation: 'Oh et al. · Cell', year: '2016', kind: 'Study', topic: 'Microbiome',
+    url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC4860256/', doi: '10.1016/j.cell.2016.04.008',
+    finding: 'Sampling 17 skin sites in 12 healthy people over months to years found substantial persistence of individual microbial communities and strains, with variation by person and site.',
+    limits: 'An observational study, not a randomized test of bathing routines. It shows resilience in everyday life without proving any cleanser harmless or any particular washing schedule optimal.', access: 'Full-text summary, results, and discussion reviewed',
+  },
+  {
+    id: 'product-dynamics', title: 'The impact of skin care products on skin chemistry and microbiome dynamics',
+    citation: 'Bouslimani et al. · BMC Biology', year: '2019', kind: 'Study', topic: 'Microbiome',
+    url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC6560912/', doi: '10.1186/s12915-019-0660-6',
+    finding: 'An 11-person, nine-week study of four products found individualized chemical and microbial responses. Deodorant and foot powder increased measured microbial diversity; lotions had little effect on that measure.',
+    limits: 'Small study of specific products, without evidence that the changes improved or worsened clinical health. Product-free does not automatically mean more diverse, and more diverse does not automatically mean healthier.', access: 'Abstract reviewed',
+  },
+  {
     id: 'cleansers', title: 'Skin biophysical assessments of four types of soaps by forearm in-use test',
     citation: 'Khosrowpour et al. · Journal of Cosmetic Dermatology', year: '2022', kind: 'Study', topic: 'Cleansing',
     url: 'https://pubmed.ncbi.nlm.nih.gov/34741581/', doi: '10.1111/jocd.14589',
@@ -24,7 +66,7 @@ export const sources: Source[] = [
     id: 'dry-skin', title: 'Dermatologists’ top tips for relieving dry skin',
     citation: 'American Academy of Dermatology', year: 'Living guidance', kind: 'Guidance', topic: 'Cleansing',
     url: 'https://www.aad.org/public/everyday-care/skin-care-basics/dry/dermatologists-tips-relieve-dry-skin',
-    finding: 'For dry skin, dermatologists recommend brief, warm bathing, gentle fragrance-free cleansing, and moisturizer after bathing.',
+    finding: 'For dry skin, dermatologists recommend brief, warm bathing, using gentle cleanser only where needed, and moisturizer afterward. A thick all-over lather is not the goal.',
     limits: 'Advice for managing dry skin, not a randomized comparison of all bathing habits or proof that everyone needs the same products.', access: 'Full guidance reviewed',
   },
   {
@@ -67,7 +109,7 @@ export const sources: Source[] = [
     citation: 'Ismail & Nixon · DermNet', year: '2020', kind: 'Guidance', topic: 'Ingredients',
     url: 'https://dermnetnz.org/topics/allergic-contact-dermatitis-to-essential-oils',
     finding: 'Essential oils can cause allergic contact dermatitis. Plant origin does not protect an ingredient from triggering a skin reaction.',
-    limits: 'Clinical education about allergy, not a claim that every oil causes reactions in every user. The source does not establish a benefit for sage oil bathing.', access: 'Full guidance reviewed',
+    limits: 'Clinical education about allergy, not a claim that every oil causes reactions in every user. It does not establish essential oils as necessary for skin health.', access: 'Full guidance reviewed',
   },
   {
     id: 'bath-oils', title: 'Bath Safety: how to use essential oils safely in the bath',

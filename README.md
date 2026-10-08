@@ -4,9 +4,9 @@ A little less product. A lot more curiosity.
 
 **[Visit the website](https://crs48.github.io/freethepores/)**
 
-An independent, playful exploration of simpler skin care by Christopher Smothers. Six research explainers connect a personal story to a searchable library of 18 studies, reviews, and guidance sources. Every source has an original link, a finding, limitations, and a reading-access note.
+An independent, playful exploration of simpler skin care by Christopher Smothers. Six research explainers investigate simpler bathing, skin-barrier care, and the microbiome through a searchable library of 24 studies, reviews, and guidance sources. Every source has an original link, a finding, limitations, and a reading-access note.
 
-The editorial position is to question unnecessary products while retaining effective hygiene, sun protection, and prescribed care. Personal experience is identified as personal experience. The site makes no claim that vegan diets eliminate odor, that baths detoxify the body, or that natural ingredients are inherently safer.
+The editorial position is to question unnecessary products while retaining effective hygiene, sun protection, and prescribed care. The central question is whether most people could simplify their routines; this is a hypothesis to investigate, not a proven universal protocol. The site makes no claim that vegan diets eliminate odor, that baths detoxify the body, or that natural ingredients are inherently safer.
 
 ## Run locally
 
@@ -33,7 +33,7 @@ flowchart LR
   S[Typed source library] --> R[Research index]
   T[Topic explainers] --> A[Research articles]
   S --> A
-  L[Shared layout and Tailwind styles] --> H[Homepage and story]
+  L[Shared layout and Tailwind styles] --> H[Homepage and project idea]
   L --> R
   L --> A
   R --> B[Astro static build]
@@ -49,7 +49,7 @@ flowchart LR
 | `src/data/topics.ts` | Six explainers with citations to source IDs |
 | `src/data/site.ts` | Base-aware links, review date, repository URL |
 | `src/data/filter.mjs` | Pure library filtering function |
-| `src/pages/` | Homepage, research, story, practical guide, editorial standards |
+| `src/pages/` | Homepage, research, project idea, practical guide, editorial standards |
 | `src/styles/global.css` | Tailwind theme, typography, responsive layouts |
 | `.github/workflows/deploy.yml` | Validate pull requests; deploy main to Pages |
 

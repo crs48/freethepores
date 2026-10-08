@@ -5,14 +5,14 @@ import { sources } from '../../data/sources';
 import { topics } from '../../data/topics';
 import { href } from '../../data/site';
 ---
-<Layout title="The big questions" description="Explore six questions about simpler skin care, with 18 linked studies, reviews, and clinical guidance sources—and clear limits for every claim.">
-  <section class="page-top"><div class="wrap"><span class="eyebrow">Curiosity, with receipts</span><h1>Good questions.<br />Actual footnotes.</h1><p class="lead">What does your skin need? What have we just been sold? Follow a question, inspect the evidence, and leave room for uncertainty.</p></div></section>
-  <section class="section"><div class="wrap"><div class="question-grid">{topics.map((topic, i) => <a class="question-card" href={href(`research/${topic.slug}/`)}><div class="question-top"><span class="question-number">0{i + 1}</span><span class="pill">{topic.label}</span></div><h3>{topic.title}</h3><p>{topic.description}</p><span class="question-bottom">Read the research notes</span></a>)}</div></div></section>
+<Layout title="The big questions" description={`Explore six questions about simpler skin care, with ${sources.length} linked studies, reviews, and guidance sources—and clear limits for every claim.`}>
+  <section class="page-top"><div class="wrap"><span class="eyebrow">Curiosity, with receipts</span><h1>Good questions.<br />Actual footnotes.</h1><p class="lead">How much bathing, cleanser, and scrubbing do we need? What supports the skin barrier and microbiome? Follow a question and inspect the evidence.</p></div></section>
+  <section class="section"><div class="wrap"><h2 class="sr-only">Research questions</h2><div class="question-grid">{topics.map((topic, i) => <a class="question-card" href={href(`research/${topic.slug}/`)}><div class="question-top"><span class="question-number">0{i + 1}</span><span class="pill">{topic.label}</span></div><h3>{topic.title}</h3><p>{topic.description}</p><span class="question-bottom">Read the research notes</span></a>)}</div></div></section>
   <section class="section border-t border-ink" id="library"><div class="wrap">
     <div class="section-heading"><div><span class="eyebrow">The source library</span><h2>Read past the headline.</h2></div><a class="text-link fine" href={href('about/#method')}>How we selected these sources</a></div>
     <p class="max-w-3xl">{sources.length} sources: original studies, research reviews, and clinical guidance. A curated starting point, not a systematic review. Each summary tells you what was found and where the claim stops.</p>
     <form class="library-tools" role="search" id="library-search" hidden>
-      <div><label for="search">Search the library</label><input type="search" id="search" name="q" placeholder="Try “scent”, “magnesium”, or “eczema”" /></div>
+      <div><label for="search">Search the library</label><input type="search" id="search" name="q" placeholder="Try “bathing”, “barrier”, or “microbiome”" /></div>
       <div><label for="kind">Type of source</label><select id="kind" name="kind"><option value="all">All sources</option><option value="Study">Original studies</option><option value="Review">Research reviews</option><option value="Guidance">Clinical & safety guidance</option></select></div>
       <button class="button" type="reset">Clear filters</button>
     </form>
