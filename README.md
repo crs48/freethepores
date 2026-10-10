@@ -4,7 +4,9 @@ A little less product. A lot more curiosity.
 
 **[Visit the website](https://freethepores.com/)**
 
-An independent, playful exploration of simpler skin care by Christopher Smothers. Six research explainers investigate simpler bathing, skin-barrier care, and the microbiome through a searchable library of 24 studies, reviews, and guidance sources. Every source has an original link, a finding, limitations, and a reading-access note.
+An independent, playful exploration of simpler skin care by Christopher Smothers. Seven field notes investigate pores, bathing, skin-barrier care, the microbiome, scent, ingredients, useful products, and hair care through a searchable library of 28 studies, reviews, and guidance sources. Every source has an original link, a finding, limitations, a reading-access note, and a source-check date.
+
+A private one-minute shelf audit helps readers consider what a routine step does for them. A skin-neighborhood schematic explains the barrier and its residents. Every field note has a quick take, a contents list, practical next steps, and links to the evidence. The practical guide includes product-testing advice and clear signs for getting medical help.
 
 The editorial position is to question unnecessary products while retaining effective hygiene, sun protection, and prescribed care. The central question is whether most people could simplify their routines; this is a hypothesis to investigate, not a proven universal protocol. The site makes no claim that vegan diets eliminate odor, that baths detoxify the body, or that natural ingredients are inherently safer.
 
@@ -46,14 +48,17 @@ flowchart LR
 | File | Purpose |
 | --- | --- |
 | `src/data/sources.ts` | Source metadata, findings, limitations, access notes |
-| `src/data/topics.ts` | Six explainers with citations to source IDs |
+| `src/data/topics.ts` | Seven explainers with citations to source IDs |
+| `src/data/field-guide.ts` | Practical article notes and declarative shelf-audit choices |
+| `src/components/ShelfAudit.astro` | Accessible local interaction with full no-JavaScript reading |
+| `src/components/SkinMap.astro` | Original decorative barrier schematic and linked explanations |
 | `src/data/site.ts` | Base-aware links, review date, repository URL |
 | `src/data/filter.mjs` | Pure library filtering function |
 | `src/pages/` | Homepage, research, project idea, practical guide, editorial standards |
 | `src/styles/global.css` | Tailwind theme, typography, responsive layouts |
 | `.github/workflows/deploy.yml` | Validate pull requests; deploy main to Pages |
 
-Fonts are served locally. Search runs in the browser. Core content, source links, and expandable reading notes work without JavaScript; only the library filters require it. No analytics, external font requests, accounts, or cookies are added by the site.
+Fonts are served locally. Search and shelf-audit selections run in the browser without storage or network requests. Core content, all four shelf-audit notes, source links, and expandable reading notes work without JavaScript. JavaScript progressively adds the library filters and single-choice shelf view. Reduced-motion preferences are respected, and print styles preserve the reading content. No analytics, external font requests, accounts, or cookies are added by the site.
 
 ## Publish with GitHub Pages
 
@@ -65,7 +70,7 @@ For a fork, update the `site` and `base` in `astro.config.mjs` and the repositor
 
 ## Research and corrections
 
-This is a curated narrative collection, not a systematic review or independently clinician-reviewed advice. The launch source check is dated October 8, 2026. Read the site's [editorial standards](https://freethepores.com/about/) and [CONTRIBUTING.md](CONTRIBUTING.md) before adding claims. Cite the original paper where possible, distinguish abstracts from full texts, include contradictory findings, and preserve uncertainties. Do not copy journal text or figures into the repository.
+This is a curated narrative collection, not a systematic review or independently clinician-reviewed advice. The launch source check is dated October 8, 2026. Selected sources were rechecked and four guidance sources added on October 10, 2026; each entry carries its own date. The [refresh audit](docs/2026-10-10-field-guide-refresh.md) records the scope and limitations. Read the site's [editorial standards](https://freethepores.com/about/) and [CONTRIBUTING.md](CONTRIBUTING.md) before adding claims. Cite the original paper where possible, distinguish abstracts from full texts, include contradictory findings, and preserve uncertainties. Do not copy journal text or figures into the repository.
 
 Open an issue or pull request for corrections, ideally identifying the exact statement and the better evidence. A source's inclusion does not imply endorsement or permission to redistribute it.
 

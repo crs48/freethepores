@@ -6,11 +6,11 @@
 - [x] Review the deadbutt.fyi visual benchmark: generous editorial type, warm paper, a friendly character, practical paths, and evidence close to claims.
 - [x] Retain the bath illustration, yellow/lilac identity, routes, library filters, citations, no-JavaScript reading, and GitHub Pages deployment.
 - [x] Identify the gaps: no explanation of pores despite the name; dense research pages without a contents list; little help applying the evidence; vague symptom escalation; library dates cannot distinguish new checks.
-- [ ] Refresh the shared visual system and homepage with a more expressive editorial rhythm.
-- [ ] Add an accessible, private shelf-audit interaction and useful no-JavaScript reading.
-- [ ] Extend every explainer with concrete next steps; add a pores explainer and clearer care boundaries.
-- [ ] Run repository validation and check the rendered HTML, routes, and interaction contracts.
-- [ ] Hand off for desktop/mobile browser review and publication by the coordinating agent.
+- [x] Refresh the shared visual system and homepage with a more expressive editorial rhythm.
+- [x] Add an accessible, private shelf-audit interaction and useful no-JavaScript reading.
+- [x] Extend every explainer with concrete next steps; add a pores explainer and clearer care boundaries.
+- [x] Run repository validation and check the rendered HTML, routes, and interaction contracts.
+- [x] Hand off for desktop/mobile browser review and publication by the coordinating agent.
 
 ```mermaid
 flowchart LR
@@ -42,4 +42,10 @@ PubMed/PMC returned incomplete/challenge pages for the bathing-frequency, diet-a
 
 ## Validation and handoff
 
-Pending implementation. Browser automation is reserved for the coordinating agent. No push or deployment from this subtask.
+- `npm ci` using native Node 22.23.1: successful, 0 reported vulnerabilities.
+- `npm run validate`: Astro check reported 0 errors, 0 warnings, 0 hints; both library-filter tests passed; all 14 pages built; all internal links, assets, and citation anchors passed.
+- Additional generated-HTML checks passed: one H1 and canonical per content page, unique IDs, all four shelf-audit notes present without JavaScript, and valid control targets.
+- `git diff --check`: clean. Source inspection found no storage or network APIs for user input.
+- Core reading retains native `<details>` behavior and links; keyboard buttons expose pressed state and announce the changed result. CSS includes narrow layouts, visible focus, reduced motion, and print rules.
+- Browser/viewport verification is reserved for the coordinating agent and is not claimed by this subtask. Suggested checks: home at 390px and 1280px; shelf choice by keyboard; all source-search filters and reset; an article contents link; `/less/#when-to-get-help`; no-JavaScript home and article reading.
+- No push or deployment from this subtask. Preview with `npm run preview -- --port 4333` after building.
