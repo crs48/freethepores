@@ -1,0 +1,45 @@
+# A warmer field guide for the skin you're in
+
+## Scope and audit
+
+- [x] Read every page, all six topic explainers, the 24-source library, search logic, and deployment configuration.
+- [x] Review the deadbutt.fyi visual benchmark: generous editorial type, warm paper, a friendly character, practical paths, and evidence close to claims.
+- [x] Retain the bath illustration, yellow/lilac identity, routes, library filters, citations, no-JavaScript reading, and GitHub Pages deployment.
+- [x] Identify the gaps: no explanation of pores despite the name; dense research pages without a contents list; little help applying the evidence; vague symptom escalation; library dates cannot distinguish new checks.
+- [ ] Refresh the shared visual system and homepage with a more expressive editorial rhythm.
+- [ ] Add an accessible, private shelf-audit interaction and useful no-JavaScript reading.
+- [ ] Extend every explainer with concrete next steps; add a pores explainer and clearer care boundaries.
+- [ ] Run repository validation and check the rendered HTML, routes, and interaction contracts.
+- [ ] Hand off for desktop/mobile browser review and publication by the coordinating agent.
+
+```mermaid
+flowchart LR
+  H[Warm, playful homepage] --> S[Shelf audit]
+  H --> Q[Seven research questions]
+  S --> P[One optional change]
+  S --> C[Care when needed]
+  Q --> T[Takeaway + contents + deep reading]
+  T --> E[Source findings + limitations]
+```
+
+## Research notes
+
+This pass checks selected original sources and adds new practical guidance. It is not a systematic review or a claim that every source was re-reviewed. Per-source check dates preserve that distinction.
+
+| Source | Reason for checking | Editorial decision |
+| --- | --- | --- |
+| [AAD: large facial pores](https://www.aad.org/public/everyday-care/skin-care-secrets/face/treat-large-pores) | Missing explanation of pores; advice differs from dry-body-skin care | Explain appearance and irritation; do not generalize targeted body washing into universal water-only face care. |
+| [AAD: testing products](https://www.aad.org/public/everyday-care/skin-care-secrets/prevent-skin-problems/test-skin-care-products/) | Safe practical experimentation | Explain home testing, fragrance-free versus unscented, and distinction from clinical patch testing. |
+| [AAD: rash warning signs](https://www.aad.org/public/everyday-care/itchy-skin/rash/rash-101) | Existing advice says only “seek care” | Add specific prompt-care and emergency cues; never label worsening skin a detox. |
+| [AAD: acne habits](https://www.aad.org/public/diseases/acne/skin-care/habits-stop) | Avoid implying acne is dirt or too many bottles | Keep directed treatment, gentle cleansing, and time to assess; refer painful/deep acne for care. |
+| [AAD: dry skin](https://www.aad.org/public/everyday-care/skin-care-basics/dry/dermatologists-tips-relieve-dry-skin) | Recheck targeted cleansing and moisturizing guidance | Preserve population-specific limits. |
+| [AAD: sun protection](https://www.aad.org/public/everyday-care/sun-protection/shade-clothing-sunscreen/practice-safe-sun) | Keep effective care in the shelf audit | Retain shade, clothing, and broad-spectrum water-resistant SPF 30+. |
+| [AAD: curls](https://www.aad.org/public/everyday-care/hair-scalp-care/hair/curly-hair-care) | Verify washing guidance | Preserve scalp care and the stated two-to-three-week minimum without turning it into a universal schedule. |
+| [FDA: cosmetic microbial safety](https://www.fda.gov/cosmetics/potential-contaminants-cosmetics/microbiological-safety-and-cosmetics) | Practical meaning of preservation | Add clean-container and no-dilution guidance, without portraying every preservative as harmless. |
+| [Bouwstra et al., 2023](https://pubmed.ncbi.nlm.nih.gov/37666282/) | Barrier schematic | Keep the barrier-lipid explanation distinct from surface oil; schematic is not clinical anatomy. |
+
+PubMed/PMC returned incomplete/challenge pages for the bathing-frequency, diet-and-odor, and product-dynamics recheck attempts. Existing findings and original access notes are retained, without advancing their check dates or claiming a new full-text review.
+
+## Validation and handoff
+
+Pending implementation. Browser automation is reserved for the coordinating agent. No push or deployment from this subtask.
