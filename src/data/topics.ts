@@ -6,6 +6,19 @@ export type Topic = {
 
 export const topics: Topic[] = [
   {
+    slug: 'pores', label: 'Pores & texture', title: 'Can we make peace with our pores?',
+    description: 'Your face is allowed to look like skin. A small field guide to texture, gentleness, and knowing when a concern deserves care.',
+    verdict: 'Care for the skin; lower the stakes of perfection',
+    sections: [
+      { title: 'Less noticeable is different from nonexistent.', paragraphs: ['Pores can look more prominent with clogging, oiliness, irritation, or reduced firmness. Dermatology guidance discusses making them less noticeable. That is a choice about appearance, not a standard every face has to meet.', 'A close-up camera and a magnifying mirror are very demanding roommates. You are allowed to care about texture. You are equally allowed to stop making it the main event.'], sources: ['pores'] },
+      { title: 'Your face is not your dry elbow.', paragraphs: ['Advice to use cleanser only where needed on dry body skin is not a universal water-only rule. For facial pores, AAD recommends a gentle, non-comedogenic cleanser and avoiding irritation.', 'The goal is appropriate care for the area and the problem. Scrubbing or picking can irritate skin and make pores more noticeable.'], sources: ['pores', 'dry-skin'] },
+      { title: 'Acne deserves care, not a cleanliness score.', paragraphs: ['If breakouts are the concern, a gentler routine can support acne care; it does not automatically replace treatment. Constantly switching products can irritate skin and make it difficult to assess what helps.', 'Follow treatment directions and discuss persistent concerns with a clinician. Deep or painful acne deserves a dermatologist’s attention. You do not have to scrub harder or earn help by trying every bottle first.'], sources: ['acne-care'] },
+      { title: 'A smaller routine can still do real work.', paragraphs: ['Keep sun protection and care that helps. If you want to change how your pores look, ask what result is realistic, what irritation is possible, and whether the effort matters to you.', 'This site is deliberately not a pore-minimizing shopping list. Comfortable skin, useful care, and less time negotiating with the bathroom mirror are good ambitions.'], sources: ['sun-guidance'] },
+    ],
+    takeaway: 'Choose gentle, purposeful care. Normal-looking texture is not an emergency, and a skin condition is not a personal failure.',
+    unknown: 'This guide cannot tell from appearance whether a spot is acne or something else. Cosmetic advice about pores is not a diagnosis, and no product guarantees a texture-free face.',
+  },
+  {
     slug: 'cleansing', label: 'Bathing & cleansing', title: 'Does your whole body need soap every day?',
     description: 'A bath, an all-over lather, and an exfoliating scrub are three different things. They deserve three different questions.',
     verdict: 'Gentler care is supported; one schedule is not',

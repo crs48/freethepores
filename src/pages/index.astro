@@ -1,47 +1,51 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SkinMap from '../components/SkinMap.astro';
+import ShelfAudit from '../components/ShelfAudit.astro';
 import { href } from '../data/site';
-const questions = [
-  { slug: 'cleansing', label: 'Bathing & cleansing', title: 'Does your whole body need soap every day?', text: 'Separate bathing, cleansing, and scrubbing. Then ask which parts you actually need.' },
-  { slug: 'microbiome', label: 'Your microbiome', title: 'Who else is living on your skin?', text: 'A living ecosystem, a protective barrier, and a better question than “kill all the germs.”' },
-  { slug: 'scent', label: 'Scent & diet', title: 'Can you eat your way to a better smell?', text: 'A small study, a big internet claim, and what your armpits actually tell us.' },
-  { slug: 'natural', label: 'Natural & synthetic', title: 'Is natural always the gentler option?', text: 'Botanical fragrances, bath additives, and the trouble with a very persuasive label.' },
-  { slug: 'useful-products', label: 'Products with a purpose', title: 'Which products earn their place?', text: 'Sun protection, moisturizers, and treatments deserve a fair hearing.' },
-  { slug: 'hair', label: 'Hair & hydration', title: 'A simpler routine. Even for curls?', text: 'Less scrubbing, thoughtful conditioning, and no one-size-fits-all schedule.' },
-];
+import { topics } from '../data/topics';
+import { sources } from '../data/sources';
+import { fieldNotes } from '../data/field-guide';
 ---
-<Layout title="Less product. More you.">
+<Layout title="Skin is weird. Care can be simple.">
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <span class="eyebrow">An independent inquiry into doing less</span>
-        <h1>Less product.<br />More <em>you.</em></h1>
-        <p class="hero-lead">Your skin doesn’t need a 12-step identity crisis. Could less lather, less scrubbing, and fewer products make everyday care simpler? Let’s follow the evidence.</p>
-        <div class="hero-actions"><a class="button button-dark" href={href('research/')}>Question the routine</a><a class="text-link fine" href={href('why/')}>The idea behind it</a></div>
+        <span class="eyebrow hero-kicker"><span aria-hidden="true">✳</span> A field guide for the skin you’re in</span>
+        <h1>Skin is weird.<br />Care can be<br /><em>simple.</em></h1>
+        <p class="hero-lead">Tiny pores. Busy microbes. A bathroom shelf with main-character energy. Let’s get curious about what your skin actually needs—and make a little room for less.</p>
+        <div class="hero-actions"><a class="button button-dark" href="#shelf">Give my routine a rethink <span aria-hidden="true">↗</span></a><a class="text-link fine" href="#skin-basics">First, meet your skin <span aria-hidden="true">↓</span></a></div>
+        <p class="hero-small">Useful care. No purity contest. Absolutely no checkout cart.</p>
       </div>
       <figure class="hero-art">
-        <div class="hero-sticker" aria-hidden="true">100%<strong>human.</strong>pores included.</div>
-        <img src={href('images/bath.webp')} width="1100" height="825" alt="A happy peach-colored character relaxing in a lilac bathtub and giving a peace sign." fetchpriority="high" />
-        <figcaption class="hero-caption">Artist’s impression of having fewer things to think about.</figcaption>
+        <span class="art-label">Fig. 00 / At home in your own skin</span>
+        <div class="hero-sticker" aria-hidden="true">Pores included.<strong>Obviously.</strong></div>
+        <img src={href('images/bath.webp')} width="1100" height="825" alt="A contented peach-colored character with dotted skin relaxes in a lilac bathtub and gives a peace sign." fetchpriority="high" />
+        <figcaption class="hero-caption">No serum was harmed in the making of this good mood.</figcaption>
       </figure>
     </div>
   </section>
-  <div class="ticker"><div class="wrap ticker-inner"><span>Pro-curiosity</span><span class="ticker-star" aria-hidden="true">✳</span><span>Less marketing. More evidence.</span><span class="ticker-star" aria-hidden="true">✳</span><span>Comfortable in your own skin</span><span class="ticker-star" aria-hidden="true">✳</span></div></div>
-  <section class="section"><div class="wrap intro-grid">
-    <div><span class="eyebrow mb-5">The very serious question behind the joke</span><h2>What if we don’t<br />need all this stuff?</h2></div>
-    <div class="intro-copy"><p>A daily shower can come with a whole ritual: soap everywhere, an exfoliating cloth, and another product to smooth things out. Which parts are doing useful work?</p><p>Free the Pores asks how far we can simplify that ritual while caring for the skin barrier and the life on it. Keep useful hygiene. Investigate the rest. Absolutely no checkout cart.</p><a class="text-link fine inline-block mt-5" href={href('about/')}>Read our ground rules</a></div>
+  <div class="ticker"><div class="wrap ticker-inner"><span>Comfort over perfection</span><span class="ticker-star" aria-hidden="true">✳</span><span>Curiosity with receipts</span><span class="ticker-star" aria-hidden="true">✳</span><span>Keep the sunscreen</span></div></div>
+  <section class="section intro-section"><div class="wrap intro-grid">
+    <div><span class="eyebrow mb-5">A smaller routine. A bigger question.</span><h2>What if we don’t<br />need all <em>this stuff?</em></h2></div>
+    <div class="intro-copy"><p>Wash. Scrub. Tone. Layer. Repeat. It’s easy for care to turn into a part-time job. Which steps help, which do we enjoy, and which just came with persuasive packaging?</p><p>Free the Pores explores simpler skin care with a soft spot for human weirdness and a healthy appetite for footnotes. Keep useful hygiene, sun protection, and treatment. Question the automatic extras.</p><a class="text-link fine inline-block mt-5" href={href('why/')}>The idea behind the name <span aria-hidden="true">↗</span></a></div>
   </div></section>
-  <section class="section questions"><div class="wrap">
-    <div class="section-heading"><div><span class="eyebrow">Start with a question</span><h2>Let’s get under the surface.</h2></div><a class="text-link fine shrink-0" href={href('research/#library')}>Browse the source library</a></div>
-    <div class="question-grid">{questions.map((question, i) => <a class="question-card" href={href(`research/${question.slug}/`)}><div class="question-top"><span class="question-number">0{i + 1}</span><span class="pill">{question.label}</span></div><h3>{question.title}</h3><p>{question.text}</p><span class="question-bottom">Explore the evidence</span></a>)}</div>
+  <section class="section skin-section" id="skin-basics"><div class="wrap">
+    <div class="section-heading"><div><span class="eyebrow">Your skin, in three little pieces</span><h2>A whole neighborhood.<br /><em>Already at work.</em></h2></div><p class="section-aside">The picture is playful.<br />The biology is worth understanding.</p></div>
+    <SkinMap />
   </div></section>
-  <section class="section story-band"><div class="wrap story-grid">
-    <div><span class="eyebrow">The idea behind the name</span><h2 class="big-quote mt-5">Your skin is a habitat.<br />Treat it like one.</h2><p class="fine">A living surface. A simpler approach.</p></div>
-    <div><h3>Care for what’s already there.</h3><p>Skin has its own barrier and resident microbial communities. We want to understand how a routine can support them with fewer unnecessary steps.</p><p>Wash your hands. Question the automatic all-over lather. And ask what “a healthy microbiome” actually means.</p><a class="button" href={href('why/')}>Explore the idea</a></div>
+  <section class="section" id="shelf"><div class="wrap"><ShelfAudit /></div></section>
+  <section class="section questions" id="questions"><div class="wrap">
+    <div class="section-heading"><div><span class="eyebrow">Seven ways to get curious</span><h2>Let’s get under<br /><em>the surface.</em></h2></div><a class="text-link fine shrink-0" href={href('research/#library')}>{sources.length} sources. No secret sauce. ↗</a></div>
+    <div class="question-list">{topics.map((topic, i) => <a class="question-row" href={href(`research/${topic.slug}/`)}><span class="question-number">0{i + 1}</span><span class="question-glyph" aria-hidden="true">{fieldNotes[topic.slug].icon}</span><div><span class="eyebrow">{topic.label}</span><h3>{topic.title}</h3></div><p>{topic.description}</p><span class="row-arrow" aria-hidden="true">↗</span></a>)}</div>
   </div></section>
-  <section class="section"><div class="wrap">
-    <div class="section-heading"><div><span class="eyebrow">A few things we’re clear about</span><h2>Small routine. Open mind.</h2></div></div>
-    <div class="mini-grid"><article><span class="eyebrow">01 / Keep what helps</span><h3>Products can earn a place.</h3><p>Sunscreen, a moisturizer for dry skin, or a prescribed treatment can serve a real purpose. The evidence belongs in the conversation.</p><a class="text-link fine inline-block mt-4" href={href('research/useful-products/')}>See what holds up</a></article><article><span class="eyebrow">02 / Skip the purity contest</span><h3>Natural is not a safety test.</h3><p>Water and plant extracts are made of chemicals, too. A useful question is how a particular ingredient behaves at a particular dose, on your skin.</p><a class="text-link fine inline-block mt-4" href={href('research/natural/')}>Unpack the label</a></article><article><span class="eyebrow">03 / Stay curious</span><h3>A hypothesis deserves a test.</h3><p>Could a much simpler routine work for more people? We’re interested in comfort, skin health, and evidence that could change our minds.</p><a class="text-link fine inline-block mt-4" href={href('about/')}>How we read research</a></article></div>
+  <section class="section reality-section"><div class="wrap">
+    <div class="section-heading"><div><span class="eyebrow">A small reality check</span><h2>Sounds good.<br /><em>Does it hold water?</em></h2></div><p class="section-aside">Open a claim. Peek at the catch.</p></div>
+    <div class="reality-grid">
+      <details><summary><span class="eyebrow">The label says</span>“Natural means gentle.”<span aria-hidden="true">+</span></summary><p>A plant can smell lovely and still trigger contact allergy. The ingredient, formula, dose, and person matter more than the leaf on the label.</p><a class="text-link" href={href('research/natural/')}>Read past the leaf ↗</a></details>
+      <details><summary><span class="eyebrow">The internet says</span>“More microbes = better skin.”<span aria-hidden="true">+</span></summary><p>A changed microbial sample is not automatically a health benefit. Look for outcomes like symptoms and barrier function, not just a bigger bacterial guest list.</p><a class="text-link" href={href('research/microbiome/')}>Meet the evidence ↗</a></details>
+      <details><summary><span class="eyebrow">The plot twist</span>“Minimalists can use products.”<span aria-hidden="true">+</span></summary><p>Yes. Useful care gets to stay. Moisturizer, sunscreen, conditioner, and a prescribed treatment can all belong in a simple routine.</p><a class="text-link" href={href('research/useful-products/')}>Meet the keepers ↗</a></details>
+    </div>
   </div></section>
-  <section class="section bottom-cta"><div class="wrap"><span class="eyebrow">No starter kit required</span><h2>Make some room<br />on the bathroom shelf.</h2><p>Consider what you wash, how much you scrub, and which products have a clear job. Simpler can start with one change.</p><a class="button button-dark" href={href('less/')}>Explore a simpler routine</a></div></section>
+  <section class="section bottom-cta"><div class="wrap"><span class="eyebrow">No starter kit required</span><h2>Less shelf.<br /><em>More self.</em></h2><p>Choose one optional step. Notice what helps. Leave room to change your mind—and ask for help when your skin needs it.</p><a class="button button-dark" href={href('less/')}>Try a little less <span aria-hidden="true">↗</span></a><p class="fine cta-footnote">An independent exploration by Christopher Smothers.<br /><a href={href('about/')}>Our research standards are here, in normal-sized type.</a></p></div></section>
 </Layout>

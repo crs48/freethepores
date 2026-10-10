@@ -10,7 +10,7 @@ interface Props { title: string; description?: string; }
 const { title, description = 'A little less product. A lot more curiosity. An independent, evidence-aware exploration of skin, scent, and simpler routines by Christopher Smothers.' } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const navigation = [
-  ['The big questions', 'research/'], ['Try less', 'less/'], ['The idea', 'why/'],
+  ['The field notes', 'research/'], ['Try a little less', 'less/'], ['The idea', 'why/'],
 ];
 ---
 <!doctype html>
@@ -35,7 +35,7 @@ const navigation = [
         <a class="brand" href={href()} aria-label="Free the Pores home"><span class="brand-mark" aria-hidden="true">∴</span><span>free the pores<span class="brand-period">.</span></span></a>
         <nav aria-label="Main navigation">
           {navigation.map(([label, path]) => <a href={href(path)} aria-current={Astro.url.pathname.startsWith(href(path)) ? 'page' : undefined}>{label}</a>)}
-          <a class="nav-library" href={href('research/#library')}>The evidence <span aria-hidden="true">[+]</span></a>
+          <a class="nav-library" href={href('research/#library')}>The receipts <span aria-hidden="true">↗</span></a>
         </nav>
       </div>
     </header>

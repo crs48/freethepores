@@ -10,15 +10,44 @@ export type Source = {
   finding: string;
   limits: string;
   access: string;
+  checked?: string;
 };
 
 export const sources: Source[] = [
+  {
+    id: 'pores', title: 'What can treat large facial pores?',
+    citation: 'American Academy of Dermatology', year: 'Living guidance', kind: 'Guidance', topic: 'Cleansing',
+    url: 'https://www.aad.org/public/everyday-care/skin-care-secrets/face/treat-large-pores',
+    finding: 'Clogging, oiliness, irritation, and loss of firmness can make facial pores more noticeable. Gentle care and sun protection can help their appearance.',
+    limits: 'Advice about appearance, not a requirement to erase normal texture or proof that every suggested treatment suits every person.', access: 'Full guidance reviewed', checked: 'October 10, 2026',
+  },
+  {
+    id: 'product-testing', title: 'How to test skin care products',
+    citation: 'American Academy of Dermatology', year: 'Living guidance', kind: 'Guidance', topic: 'Ingredients',
+    url: 'https://www.aad.org/public/everyday-care/skin-care-secrets/prevent-skin-problems/test-skin-care-products/',
+    finding: 'Testing a new product on a small area before wider use can help identify reactions. Fragrance-free and unscented labels are not interchangeable.',
+    limits: 'A home use test cannot guarantee future tolerance or diagnose a contact allergy. Clinical patch testing is a separate medical investigation.', access: 'Full guidance reviewed', checked: 'October 10, 2026',
+  },
+  {
+    id: 'rash-care', title: 'Rash 101 in adults: When to seek medical treatment',
+    citation: 'American Academy of Dermatology', year: '2024', kind: 'Guidance', topic: 'Sun & treatments',
+    url: 'https://www.aad.org/public/everyday-care/itchy-skin/rash/rash-101',
+    finding: 'Rapid spread, pain, fever, blistering, or a rash involving sensitive areas warrant medical attention. Breathing or swallowing trouble and swelling around eyes or lips need immediate care.',
+    limits: 'Warning signs help decide when to seek care; their absence cannot diagnose a rash or rule out a serious problem.', access: 'Full guidance reviewed', checked: 'October 10, 2026',
+  },
+  {
+    id: 'acne-care', title: '10 skin care habits that can worsen acne',
+    citation: 'American Academy of Dermatology', year: 'Living guidance', kind: 'Guidance', topic: 'Sun & treatments',
+    url: 'https://www.aad.org/public/diseases/acne/skin-care/habits-stop',
+    finding: 'Repeatedly switching treatments, scrubbing, and drying out skin can frustrate acne care. Directed treatment needs time; deep or painful acne warrants a dermatologist.',
+    limits: 'General guidance, not a personalized acne treatment plan. It does not establish that simply stopping products treats acne.', access: 'Full guidance reviewed', checked: 'October 10, 2026',
+  },
   {
     id: 'barrier-lipids', title: 'The skin barrier: An extraordinary interface with an exceptional lipid organization',
     citation: 'Bouwstra et al. · Progress in Lipid Research', year: '2023', kind: 'Review', topic: 'Cleansing',
     url: 'https://pubmed.ncbi.nlm.nih.gov/37666282/', doi: '10.1016/j.plipres.2023.101252',
     finding: 'The outer skin barrier depends on organized lipids between cells, including ceramides, cholesterol, and free fatty acids. Their arrangement matters for permeability and water loss.',
-    limits: 'A mechanistic review, not a bathing-frequency trial. Barrier lipids are not simply a layer of surface oil; leaving more sebum on skin is not a demonstrated way to improve every barrier.', access: 'Abstract and author-hosted publication summary reviewed',
+    limits: 'A mechanistic review, not a bathing-frequency trial. Barrier lipids are not simply a layer of surface oil; leaving more sebum on skin is not a demonstrated way to improve every barrier.', checked: 'October 10, 2026', access: 'Abstract and author-hosted publication summary reviewed',
   },
   {
     id: 'exfoliation', title: 'How to safely exfoliate at home',
@@ -67,7 +96,7 @@ export const sources: Source[] = [
     citation: 'American Academy of Dermatology', year: 'Living guidance', kind: 'Guidance', topic: 'Cleansing',
     url: 'https://www.aad.org/public/everyday-care/skin-care-basics/dry/dermatologists-tips-relieve-dry-skin',
     finding: 'For dry skin, dermatologists recommend brief, warm bathing, using gentle cleanser only where needed, and moisturizer afterward. A thick all-over lather is not the goal.',
-    limits: 'Advice for managing dry skin, not a randomized comparison of all bathing habits or proof that everyone needs the same products.', access: 'Full guidance reviewed',
+    limits: 'Advice for managing dry skin, not a randomized comparison of all bathing habits or proof that everyone needs the same products.', checked: 'October 10, 2026', access: 'Full guidance reviewed',
   },
   {
     id: 'handwashing', title: 'Hand Hygiene Frequently Asked Questions',
@@ -137,7 +166,7 @@ export const sources: Source[] = [
     citation: 'U.S. Food and Drug Administration', year: 'Living guidance', kind: 'Guidance', topic: 'Ingredients',
     url: 'https://www.fda.gov/cosmetics/potential-contaminants-cosmetics/microbiological-safety-and-cosmetics',
     finding: 'Cosmetics can become contaminated by microorganisms. Ineffective preservation and consumer use can contribute to contamination.',
-    limits: 'A safety overview, not an endorsement of every preservative or a comparison of all formulations. “Preservative-free” is not by itself proof of a safer product.', access: 'Full guidance reviewed',
+    limits: 'A safety overview, not an endorsement of every preservative or a comparison of all formulations. “Preservative-free” is not by itself proof of a safer product.', checked: 'October 10, 2026', access: 'Full guidance reviewed',
   },
   {
     id: 'sunscreen-trial', title: 'Sunscreen and prevention of skin aging: a randomized trial',
@@ -151,7 +180,7 @@ export const sources: Source[] = [
     citation: 'American Academy of Dermatology', year: 'Living guidance', kind: 'Guidance', topic: 'Sun & treatments',
     url: 'https://www.aad.org/public/everyday-care/sun-protection/shade-clothing-sunscreen/practice-safe-sun',
     finding: 'Use shade, protective clothing, and broad-spectrum, water-resistant SPF 30 or higher on exposed skin. Reapply as directed, including after swimming or sweating.',
-    limits: 'Clinical prevention guidance. Sunscreen is one part of sun protection, and no sunscreen blocks all ultraviolet radiation.', access: 'Full guidance reviewed',
+    limits: 'Clinical prevention guidance. Sunscreen is one part of sun protection, and no sunscreen blocks all ultraviolet radiation.', checked: 'October 10, 2026', access: 'Full guidance reviewed',
   },
   {
     id: 'moisturizers', title: 'Emollients and moisturisers for eczema',
@@ -172,7 +201,7 @@ export const sources: Source[] = [
     citation: 'American Academy of Dermatology', year: '2022', kind: 'Guidance', topic: 'Hair & hydration',
     url: 'https://www.aad.org/public/everyday-care/hair-scalp-care/hair/curly-hair-care',
     finding: 'Curly hair often benefits from less frequent washing, conditioning, and gentle detangling while wet. Scalp care still matters.',
-    limits: 'Practical dermatology guidance, not a comparison of every curl routine. It recommends washing at least every two to three weeks; it does not endorse indefinitely avoiding shampoo.', access: 'Full guidance reviewed',
+    limits: 'Practical dermatology guidance, not a comparison of every curl routine. It recommends washing at least every two to three weeks; it does not endorse indefinitely avoiding shampoo.', checked: 'October 10, 2026', access: 'Full guidance reviewed',
   },
   {
     id: 'water', title: 'Dietary water affects human skin hydration and biomechanics',

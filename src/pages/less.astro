@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { href } from '../data/site';
+import ShelfAudit from '../components/ShelfAudit.astro';
 const steps = [
   { title: 'Separate the steps.', text: 'Bathing, applying cleanser everywhere, and exfoliating are different choices. Ask what each one is doing for you. Which areas need cleaning? Which products relieve a problem? Which steps happen only because they always have?' },
   { title: 'Reduce one unnecessary step.', text: 'An automatic scrub or an optional fragranced layer may be worth reconsidering. Keep useful cleansing, sun protection, and prescribed care. Changing one thing at a time makes your own experience easier to interpret.' },
@@ -10,11 +11,15 @@ const steps = [
 ---
 <Layout title="Try a little less" description="A gentle way to reconsider optional skin-care products while keeping effective hygiene, sun protection, and care that helps.">
   <section class="page-top"><div class="wrap"><span class="eyebrow">A smaller routine, on your terms</span><h1>Try less.<br />Notice more.</h1><p class="lead">Less cleanser, less friction, fewer optional layers: simplicity has more than one starting point.</p></div></section>
+  <div class="wrap section"><ShelfAudit /></div>
   <div class="wrap section reading-layout">
-    <aside class="reading-sidebar"><span class="eyebrow">An invitation</span><p>For reconsidering ordinary routines. Individual skin conditions and occupational exposures may need specific care.</p><a href={href('research/cleansing/')}>Cleansing & friction</a><a href={href('research/useful-products/')}>Products with a purpose</a></aside>
+    <aside class="reading-sidebar"><span class="eyebrow">An invitation</span><p>For reconsidering ordinary routines. Individual skin conditions and occupational exposures may need specific care.</p><a href="#one-change">One small change</a><a href="#new-product">Trying something new</a><a href="#when-to-get-help">When to get help</a><a href={href('research/cleansing/')}>Cleansing & friction</a><a href={href('research/useful-products/')}>Products with a purpose</a></aside>
     <div>
+      <span class="eyebrow" id="one-change">An experiment in less hassle</span><h2 class="mt-4 mb-8">One change.<br /><em>No gold stars.</em></h2>
       <ol class="steps">{steps.map(step => <li><div><h3>{step.title}</h3><p>{step.text}</p></div></li>)}</ol>
       <div class="callout yellow mt-8"><span class="eyebrow">Keep the useful basics</span><p>Keep washing your hands with soap, keep sun protection, and follow your treatment plan. Simplicity should support your health and comfort.</p><p class="fine"><a class="underline" href={href('research/#handwashing')}>Hand hygiene guidance</a> · <a class="underline" href={href('research/#sun-guidance')}>Sun protection guidance</a></p></div>
+      <section class="field-note mt-10" id="new-product"><span class="eyebrow">If something new joins the shelf</span><h2>Small introduction.<br />Then the whole face.</h2><p>AAD suggests testing a new skin-care product on a small area twice daily for seven to ten days, following its normal contact time and label directions. Stop if a reaction develops. This does not replace medical patch testing or guarantee future tolerance.</p><p>If fragrance is a problem, look for “fragrance-free”; “unscented” can still contain fragrance-related ingredients. Ask a clinician about reactions that persist or are difficult to trace.</p><a class="text-link fine" href={href('research/#product-testing')}>Read the testing guidance and its limits ↗</a></section>
+      <section class="care-note mt-10" id="when-to-get-help"><span class="eyebrow">Comfort is the point</span><h2>Worse is not<br />a detox phase.</h2><p>Get medical advice for a rash that is painful, spreading quickly, blistering, widespread, accompanied by fever, or involves your eyes, mouth, or genital skin. Pus, crusting, warmth, or swelling can signal infection.</p><p><strong>Seek emergency help immediately</strong> for trouble breathing or swallowing, or swelling around the eyes or lips. These examples are not a complete checklist; seek help whenever you are worried.</p><p>Persistent itch, cracking, or irritation also deserves a conversation with a clinician. You do not have to finish a routine experiment first.</p><a class="text-link fine" href={href('research/#rash-care')}>AAD: when a rash needs care ↗</a></section>
       <section class="mt-14"><span class="eyebrow mb-4">The practical questions</span><h2>Before you clear the shelf.</h2>
         <div class="faq">
           <details><summary>Does this mean I should stop showering every day?</summary><p>No fixed schedule follows from the research here. You can question daily all-over lathering or scrubbing independently of bathing frequency. A review in eczema did not find daily bathing associated with worse severity. <a class="underline" href={href('research/cleansing/')}>See the distinction and its limits.</a></p></details>

@@ -1,0 +1,16 @@
+---
+import { href } from '../data/site';
+---
+<div class="skin-map">
+  <div class="skin-diagram" aria-hidden="true">
+    <span class="eyebrow">Fig. 01 / A very simplified neighborhood</span>
+    <div class="skin-neighbors"><span>∴</span><span>〰</span><span>∴</span><span>〰</span><span>∴</span></div>
+    <div class="skin-bricks">{Array.from({length: 12}, (_, index) => <span class:list={{'skin-brick-face': index === 5 || index === 10}}>{index === 5 || index === 10 ? '˘ ᴗ ˘' : ''}</span>)}</div>
+    <div class="skin-caption">Cells + lipids + neighbors.<br /><em>A lot going on without a serum.</em></div>
+  </div>
+  <div class="skin-notes">
+    <div><span class="note-number">01</span><div><h3>The barrier</h3><p>The outer layer has cells and organized lipids between them. It helps limit water loss. Think protective structure, not dirt to scrub away. <a href={href('research/#barrier-lipids')}>Barrier research ↗</a></p></div></div>
+    <div><span class="note-number">02</span><div><h3>The residents</h3><p>Microbial communities vary from one patch of skin to another. More diversity is not automatically healthier. <a href={href('research/microbiome/')}>Meet your microbiome ↗</a></p></div></div>
+    <div><span class="note-number">03</span><div><h3>The texture</h3><p>Visible pores do not need to become a project. If their appearance bothers you, gentle care beats picking at them. <a href={href('research/pores/')}>Make peace with pores ↗</a></p></div></div>
+  </div>
+</div>

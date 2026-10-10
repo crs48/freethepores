@@ -1,9 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { href } from '../data/site';
+import SkinMap from '../components/SkinMap.astro';
 ---
 <Layout title="Your skin is a habitat" description="Could most people simplify bathing and skin care? The research question behind Free the Pores: useful hygiene, less unnecessary scrubbing, and care for the skin barrier and microbiome.">
   <section class="page-top"><div class="wrap"><span class="eyebrow">The idea behind Free the Pores</span><h1>Your skin<br />is a habitat.</h1><p class="lead">What if caring for it took fewer products, less scrubbing, and a better understanding of what’s already there?</p></div></section>
+  <section class="section skin-section"><div class="wrap"><SkinMap /></div></section>
   <div class="wrap section reading-layout">
     <aside class="reading-sidebar"><span class="eyebrow">Our central question</span><p>Could most people dramatically simplify their skin-care and bathing routines?</p><a href={href('research/cleansing/')}>Bathing & cleansing</a><a href={href('research/microbiome/')}>The skin’s ecosystem</a></aside>
     <article class="prose">
@@ -21,6 +23,7 @@ import { href } from '../data/site';
       <h2>Room to use less. Room to find out.</h2>
       <p>This is a research project with a rallying cry: let’s question the automatic extras. No purity contest, no universal no-soap rule, and no replacement kit to buy.</p>
       <p>Keep useful hygiene and care. Bring curiosity to the rest.</p>
+      <div class="field-note"><span class="eyebrow">The friendly part matters, too</span><p>You can enjoy a long routine. You can want a shorter one. You can have acne, eczema, visible pores, or a body that smells like a body. None of those things make you bad at being human.</p><p>The point is to make care more understandable and less demanding—not to create another standard to fail.</p></div>
       <a class="button button-dark" href={href('less/')}>Explore a simpler approach</a>
     </article>
   </div>

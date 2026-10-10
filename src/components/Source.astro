@@ -8,6 +8,6 @@ const { source } = Astro.props;
   <h3><a href={source.url}>{source.title}</a></h3>
   <p class="source-citation muted">{source.citation}</p>
   <p>{source.finding}</p>
-  <details><summary>Limits & reading notes</summary><p>{source.limits}</p><p class="fine muted">{source.access}. Source checked October 8, 2026.</p></details>
+  <details><summary>Where this claim stops</summary><p>{source.limits}</p><p class="fine muted">{source.access}. Source checked {source.checked ?? 'October 8, 2026'}.</p></details>
   <div class="source-links"><a href={source.url}>Read the original source</a>{source.doi && <a href={`https://doi.org/${source.doi}`}>DOI</a>}</div>
 </article>

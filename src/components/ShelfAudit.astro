@@ -1,0 +1,31 @@
+---
+import { shelfJobs } from '../data/field-guide';
+import { href } from '../data/site';
+---
+<section class="shelf-audit" aria-labelledby="shelf-title" data-shelf-audit>
+  <div class="shelf-heading"><span class="eyebrow">A one-minute bathroom shelf audit</span><h2 id="shelf-title">Give a product<br />a job interview.</h2><p>Think of one thing in your routine. What is it here to do?</p><p class="fine muted">A reflection tool, not a diagnosis or a product safety check. No answers are saved or sent.</p></div>
+  <div class="shelf-buttons" role="group" aria-label="Choose a product’s main purpose" hidden>
+    {shelfJobs.map(job => <button type="button" data-job={job.id} aria-pressed="false" aria-controls={`shelf-${job.id}`}><span aria-hidden="true">{job.symbol}</span>{job.label}<span aria-hidden="true">↗</span></button>)}
+  </div>
+  <p class="sr-only" data-shelf-status role="status" aria-live="polite"></p>
+  <div class="shelf-results">
+    {shelfJobs.map(job => <article id={`shelf-${job.id}`} class="shelf-result" data-result={job.id}>
+      <span class="eyebrow">{job.label}</span><h3>{job.title}</h3><p>{job.text}</p><p class="shelf-question">{job.next}</p><a class="text-link" href={href(job.link)}>{job.linkLabel} <span aria-hidden="true">↗</span></a><p class="fine muted shelf-source">Related evidence: <a href={href(`research/#${job.source}`)}>read the source and its limits</a>.</p>
+    </article>)}
+  </div>
+  <a class="fine text-link shelf-care" href={href('less/#when-to-get-help')}>Skin getting worse? Know when to get help.</a>
+</section>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-shelf-audit]').forEach(audit => {
+    const buttons = [...audit.querySelectorAll<HTMLButtonElement>('[data-job]')];
+    const results = [...audit.querySelectorAll<HTMLElement>('[data-result]')];
+    const choose = (id: string, announce = true) => {
+      buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.job === id)));
+      results.forEach(result => { result.hidden = result.dataset.result !== id; });
+      if (announce) audit.querySelector('[data-shelf-status]')!.textContent = results.find(result => result.dataset.result === id)?.querySelector('h3')?.textContent ?? '';
+    };
+    buttons.forEach(button => button.addEventListener('click', () => choose(button.dataset.job!)));
+    choose('clean', false);
+    audit.querySelector<HTMLElement>('.shelf-buttons')!.hidden = false;
+  });
+</script>
