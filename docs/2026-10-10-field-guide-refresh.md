@@ -49,3 +49,7 @@ PubMed/PMC returned incomplete/challenge pages for the bathing-frequency, diet-a
 - Core reading retains native `<details>` behavior and links; keyboard buttons expose pressed state and announce the changed result. CSS includes narrow layouts, visible focus, reduced motion, and print rules.
 - Browser/viewport verification is reserved for the coordinating agent and is not claimed by this subtask. Suggested checks: home at 390px and 1280px; shelf choice by keyboard; all source-search filters and reset; an article contents link; `/less/#when-to-get-help`; no-JavaScript home and article reading.
 - No push or deployment from this subtask. Preview with `npm run preview -- --port 4333` after building.
+
+### Coordinating review
+
+Desktop and 390px mobile browser review passed. All four shelf choices update the relevant note; keyboard activation works. Library search narrows to one source for “pores,” combining it with Original studies reaches the empty state, and Clear filters restores 28 results. The new pores article's contents link reaches its section. Homepage and article remain within the mobile viewport. Reviewed the source diff and preserved all previous routes and the deployment configuration.
